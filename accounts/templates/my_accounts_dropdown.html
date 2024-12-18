@@ -1,0 +1,8 @@
+{#{% set accounts = get_account() %}
+<select class="form-select" name="account" value="{{val or ''}}">
+    <option value="">No Account</option>
+    {% for c in accounts %}
+    {# example of using external data setting and casting #}
+    <option {{'selected' if val|string==c['id']|string}} value="{{c['id']}}">{{c['name']}}</option>
+    {% endfor %}
+</select>#}

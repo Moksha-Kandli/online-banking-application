@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block title %}My Accounts{% endblock %}
+{% block content %}
+{% from "_formhelpers.html" import render_field %}
+<div class="container-fluid">
+    <div class="h3">My Accounts</div>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{form.submit(class="btn btn-primary")}}
+    </form>
+    <table class="table">
+        {% if rows and rows|length > 0 %}
+        <thead>
+            <tr class="text-capitalize">
+                {% for r in rows[0] %}
+                <th>{{r}}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        {% for r in rows %}
+        <tr>
+            {% for v in r.values() %}
+            <td>{{v}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </table>
+</div>
+{% endblock %}

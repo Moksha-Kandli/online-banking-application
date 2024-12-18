@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block title %}Withdraw{% endblock %}
+{% block content %}
+{% from "_formhelpers.html" import render_field %}
+<div class="container-fluid">
+    <div class="h3">Withdraw</div>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{render_field(form.account_id)}}
+        {{render_field(form.withdraw_amount)}}
+        {{render_field(form.memo)}}
+        {{form.submit(class="btn btn-primary")}}
+    </form>
+</div>
+{% endblock %}

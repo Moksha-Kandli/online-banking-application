@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="h3">Select an option from the following:</div>
+        <div><a class="btn btn-outline" href="{{url_for('dashboard.create_account')}}">Create Account</a></div>
+        <div><a class="btn btn-outline" href="{{url_for('dashboard.my_accounts')}}">Get Account Info</a></div>
+        <div><a class="btn btn-outline" href="{{url_for('dashboard.deposit')}}">Deposit</a></div>
+        <div><a class="btn btn-outline" href="{{url_for('dashboard.withdraw')}}">Withdraw</a></div>
+        <div><a class="btn btn-outline" href="{{url_for('dashboard.transfer_to_own_accounts')}}">Transfer between own accounts</a></div>
+        <div><a class="btn btn-outline" href="{{url_for('dashboard.transfer_to_other_accounts')}}">Transfer to other user's account</a></div>
+        <div><a class="btn btn-outline" href="{{url_for('dashboard.transaction_history')}}">Transaction History</a></div>
+</div>
+{% endblock %}

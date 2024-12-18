@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block title %}External Transfer{% endblock %}
+{% block content %}
+{% from "_formhelpers.html" import render_field %}
+<div class="container-fluid">
+    <div class="h3">External Transfer</div>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{render_field(form.account_src)}}
+        {{render_field(form.dest_account_ln)}}
+        {{render_field(form.dest_account_last4)}}
+        {{render_field(form.amount)}}
+        {{render_field(form.memo)}}
+        {{form.submit(class="btn btn-primary")}}
+    </form>
+</div>
+{% endblock %}

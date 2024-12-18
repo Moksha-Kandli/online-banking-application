@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block title %}Deposit{% endblock %}
+{% block content %}
+{% from "_formhelpers.html" import render_field %}
+<div class="container-fluid">
+    <div class="h3">Deposit</div>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{render_field(form.account_id)}}
+        {{render_field(form.deposit_amount)}}
+        {{render_field(form.memo)}}
+        {{form.submit(class="btn btn-primary")}}
+    </form>
+</div>
+{% endblock %}
